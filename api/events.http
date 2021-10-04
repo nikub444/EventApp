@@ -1,0 +1,31 @@
+
+@api = http://localhost:4000
+GET {{api}}/events
+
+###
+GET {{api}}/events/615894dd4420c3ae572d8a6c
+
+###
+POST {{api}}/events
+Content-Type: application/json
+
+{
+    "firstName": "aaa",
+    "lastName": "sss",
+    "email": "magasza",
+    "eventDate": "2020-12-09"
+}
+
+###
+DELETE  {{api}}/events/61589cff0460dac6df07dcd7
+
+###
+PUT  {{api}}/events/615898694420c3ae572d8a73
+Content-Type: application/json
+
+{
+    "firstName": "Jakub",
+    "lastName": "Niedzwiecki",
+    "email": "magaszak1234567@gmail.com",
+    "eventDate": "2020-12-09"
+}
