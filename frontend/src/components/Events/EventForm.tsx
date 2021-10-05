@@ -22,19 +22,40 @@ const EventForm = () => {
   const handleInputChange = (e: inputChange) => {
     setEvent({ ...event, [e.target.name]: e.target.value });
   };
-
+  const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  const validateForm = () => {
+    if (
+      event.firstName === "" ||
+      event.lastName === "" ||
+      event.email === "" ||
+      event.eventDate === ""
+    ) {
+      toast.warning("All fields should be filled");
+      return false;
+    } else {
+      if (emailRegex.test(event.email)) {
+        toast.success("All fields are valid");
+        return true;
+      } else {
+        toast.warning("Write valid email");
+        return false;
+      }
+    }
+  };
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (validateForm()) {
+      if (!params.id) {
+        await eventService.createEvent(event);
+        toast.success("New event added");
+        setEvent(initialState);
+      } else {
+        await eventService.updateEvent(params.id, event);
+        toast.success("Event updated");
+      }
 
-    if (!params.id) {
-      await eventService.createEvent(event);
-      toast.success("New video added");
-      setEvent(initialState);
-    } else {
-      await eventService.updateEvent(params.id, event);
+      history.push("/");
     }
-
-    history.push("/");
   };
   const getEvent = async (id: string) => {
     const res = await eventService.getEvent(id);
