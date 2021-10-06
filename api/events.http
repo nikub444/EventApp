@@ -3,7 +3,7 @@
 GET {{api}}/events
 
 ###
-GET {{api}}/events/615894dd4420c3ae572d8a6c
+GET {{api}}/events/615c5acf4fe23c647c2002f2
 
 ###
 POST {{api}}/events
@@ -20,7 +20,7 @@ Content-Type: application/json
 DELETE  {{api}}/events/61589cff0460dac6df07dcd7
 
 ###
-PUT  {{api}}/events/615898694420c3ae572d8a73
+PUT  {{api}}/events/615c5acf4fe23c647c2002f2
 Content-Type: application/json
 
 {

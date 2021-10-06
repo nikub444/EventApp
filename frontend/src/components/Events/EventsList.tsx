@@ -18,7 +18,7 @@ const EventList = () => {
         };
       })
       .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
-    console.log(formatedVideos);
+
     setEvents(formatedVideos);
   };
   useEffect(() => {

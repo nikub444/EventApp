@@ -1,30 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { ToastContainer } from "react-toastify";
-
+import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import EventList from "./components/Events/EventsList";
-import EventForm from "./components/Events/EventForm";
-
-import "react-toastify/dist/ReactToastify.css";
-import "bootswatch/dist/pulse/bootstrap.min.css";
-import "./index.css";
-import Navbar from "./components/Navbar/Navbar";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Navbar />
-      <div className="container p-4">
-        <Switch>
-          <Route path="/" exact component={EventList} />
-          <Route path="/new-event" component={EventForm} />
-          <Route path="/update/:id" component={EventForm} />
-        </Switch>
-        <ToastContainer />
-      </div>
-    </BrowserRouter>
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );

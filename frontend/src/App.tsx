@@ -1,25 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { ToastContainer } from "react-toastify";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import EventList from "./components/Events/EventsList";
+import EventForm from "./components/Events/EventForm";
+
+import "react-toastify/dist/ReactToastify.css";
+import "bootswatch/dist/pulse/bootstrap.min.css";
+import "./index.css";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <div className="container p-4">
+        <Switch>
+          <Route path="/" exact component={EventList} />
+          <Route path="/new-event" component={EventForm} />
+          <Route path="/update/:id" component={EventForm} />
+        </Switch>
+        <ToastContainer />
+      </div>
+    </BrowserRouter>
   );
 }
 
