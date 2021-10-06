@@ -35,8 +35,9 @@ Launches the tests
 In frontend folder:
 
 ### `npm start`
-Runs react app
+Runs react app on http://localhost:3000
 
 ### `npm test`
 Launches the tests
 
+Yoo should be redirected to http://localhost:3000, but if not just type http://localhost:3000 in your browser to view app.
