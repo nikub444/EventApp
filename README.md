@@ -24,3 +24,19 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 Firstly clone repository.
 Then navigate in two separe terminals to /api folder and /frontend folder. Use this commands `cd ./frontend` , `cd ./api`. 
+In api folder you can run 
+
+### `npm run dev`
+Runs backend of express app on http://localhost:4000
+
+### `npm test`
+Launches the tests
+
+In frontend folder:
+
+### `npm start`
+Runs react app
+
+### `npm test`
+Launches the tests
+
